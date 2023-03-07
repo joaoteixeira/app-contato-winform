@@ -35,48 +35,19 @@ namespace AppContatoForm
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if( ! rdSexo1.Checked && ! rdSexo2.Checked)
-                {
-                    MessageBox.Show("Marque uma opção!");
-                } 
-                else
-                {
-                    var nome = txtNome.Text;
-                    var email = txtEmail.Text;
-
-                    var sexo = "Feminino";
-
-                    if (rdSexo1.Checked)
-                    {
-                        sexo = "Masculino";
-                    }
-
-
-
-                    string query = "INSERT INTO contato_con (nome_con, email_con, sexo_con) VALUES (@_nome, @_email, @_sexo)";
-                    var comando = new MySqlCommand(query, conexao);
-
-                    comando.Parameters.AddWithValue("@_nome", nome);
-                    comando.Parameters.AddWithValue("@_email", email);
-                    comando.Parameters.AddWithValue("@_sexo", sexo);
-
-                    comando.ExecuteNonQuery();
-
-                }
-                
-
-
-            } catch(Exception ex) {
-                //MessageBox.Show($"Ocorreram erros ao tentar salvar os dados!" +
-                //    $" Contate o suporte do sistema. (CAD 25)");
-
-                MessageBox.Show(ex.Message);
-            }
-
-
             
+            var nome = txtNome.Text;
+            var email = txtEmail.Text;
+
+
+
+            string query = "INSERT INTO contato_con (nome_con, email_con) VALUES (@_nome, @_email)";
+            var comando = new MySqlCommand(query, conexao);
+
+            comando.Parameters.AddWithValue("@_nome", nome);
+            comando.Parameters.AddWithValue("@_email", email);
+
+            comando.ExecuteNonQuery();
         }
     }
 }
