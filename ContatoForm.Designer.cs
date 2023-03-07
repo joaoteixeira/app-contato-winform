@@ -84,7 +84,7 @@
             this.txtNome.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtNome.Name = "txtNome";
             this.txtNome.ShowText = false;
-            this.txtNome.Size = new System.Drawing.Size(375, 28);
+            this.txtNome.Size = new System.Drawing.Size(366, 28);
             this.txtNome.TabIndex = 4;
             this.txtNome.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtNome.Watermark = "";

@@ -16,7 +16,7 @@ namespace AppContatoForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ContatoForm());
+            Application.Run(new MenuForm());
         }
     }
 }
